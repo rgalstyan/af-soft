@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\Api\FurnitureController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
+Route::apiResource('products', FurnitureController::class)->except(['create', 'update', 'destroy']);
 
 Route::group(['middleware' => ['auth:api', 'verified', 'all_users']], function () {
+    Route::apiResource('products', FurnitureController::class);
+
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
 
     Route::post('users/update-profile', [UserController::class, 'updateProfile']);

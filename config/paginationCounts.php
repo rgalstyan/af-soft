@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'productPerPage' => env('POST_PER_PAGE', 25),
+    'furniturePerPage' => env('FURNITURE_PER_PAGE', 25),
 ];

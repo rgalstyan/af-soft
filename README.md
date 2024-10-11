@@ -1,31 +1,31 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Technical task
+## Техническое задание
 
-Task is written using the Repository Pattern
+Написано последней версии фреймворка `Laravel` с использованием `Repository Pattern`
 
 <p align="center"><a href="#" target="_blank"><img src="public/images/repository_pattern.png" width="100%" alt="Laravel Logo"></a></p>
 
-#### In addition to the task, user registration and authentication have been added using `Laravel Passport`.
+#### В дополнение к задаче были добавлены регистрация и аутентификация пользователей с использованием `Laravel Passport`.
 
-## Installation Documentation
+## Как установить.
 
-1. Create a .env file from the .env.example file.
-2. In the .env file, modify the database configuration.
+1. Создайте `.env` файл из файля `.env.example`.
+2. В .env файле измените и задайте правильные конфигурации для вашей базы `MySQL`.
 
-#### Please run this command in root folder to install base configured Laravel 11 application.
+#### Пожалуйста, выполните эту команду в корневой папке для установки базово настроенного `Laravel 11` приложения.
     sh install.sh
 
-## Documentation for this pattern
+## Немного документации для этого паттерна
 
-### 1. Controllers Management of the REST interface to the business logic
-### 2. Services Implement business logic
-### 3. Repositories work with a database using models
+### 1. Контроллеры управляют REST-интерфейсом для бизнес-логики
+### 2. Сервисы реализуют бизнес логику
+### 3. Репозитории работают с базой данных с использованием моделей
 
-### Important
+### Важно
 
-- For every model create Repository and RepositoryInterface extended the bases. (See UserRepository and UserRepositoryInterface example)
-- After Register Repository in `Providers/RepositoryServiceProvider.php`
+- Для каждой модели создайте репозиторий и интерфейс репозитория, расширяющий базовые. (См. пример `UserRepository` и `UserRepositoryInterface`)
+- После регистрируйте репозиторий в `Providers/RepositoryServiceProvider.php`
 
 
 - UserRepositoryInterface
@@ -77,30 +77,25 @@ final class UserRepository
 }
 ```
 
-## Important for this pattern
-- <font color="red"> Don`t Call any models without Repository </font>
+## Важно для этого паттерна
+- <font color="red"> Не вызывайте модели без репозитория. </font>
 
 
-## Additionally
+## В дополнение
 
-### View Clients folder.
+### Просмотрите папку Clients.
 
-This is not used in the task; you can just see how I use external APIs.
+Это не используется в задаче; вы можете просто увидеть, как я подключаю внешние API.
 
-- Clients - There are examples of created client class for working with external resources. (`See Google client example`)
+- Здесь представлены примеры созданного класса клиента для работы с внешними ресурсами. (См. пример клиента `Google`)
 
-### Custom commands
+### Пользовательские команды
 
 - php artisan make:service {{ TestService }}
 - php artisan make:repository-interface {{ TestRepositoryInterface }}
 - php artisan make:repo {{ TestRepository }}
 
 
-### System Requirements
+### Системные требования
 - php ^8.2
 - Mysql 8
-
-## Done
-
-
-
